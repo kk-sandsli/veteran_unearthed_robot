@@ -22,7 +22,7 @@ drive_base  = DriveBase(left_motor, right_motor, wheel_diameter=88, axle_track=1
 while True:
     if Button.LEFT in hub.buttons.pressed():
         drive_base.use_gyro(False)
-        drive_base.straight(10)
+        drive_base.straight(-10)
         drive_base.use_gyro(True)
         drive_base.settings(1000, 1000, 1100, 950)
         drive_base.curve(735,45,Stop.COAST_SMART)
@@ -30,6 +30,13 @@ while True:
         wait(1000)
         drive_base.settings(200, 1000, 1100, 950)
         drive_base.straight(250,Stop.COAST_SMART)
-
         drive_base.settings(1000, 1000, 1100, 950)
-        drive_base.straight(-80,Stop.COAST_SMART)
+        drive_base.straight(-100,Stop.COAST_SMART) #####W
+        drive_base.turn(-45,Stop.COAST_SMART)
+        drive_base.straight(-350,Stop.COAST_SMART)
+        drive_base.turn(45,Stop.COAST_SMART)
+        drive_base.curve(350,-35,Stop.COAST_SMART)
+        drive_base.straight(-10, Stop.COAST_SMART)
+        drive_base.turn(-30,Stop.COAST_SMART)
+        #drive_base.straight(-200, Stop.COAST_SMART)
+        
